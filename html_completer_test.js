@@ -7,7 +7,7 @@ define(function(require, exports, module) {
 
 var assert = require("ace/test/assertions");
 var Document = require("ace/document").Document;
-var completer = require("ext/htmllanguage/html_completer");
+var completer = require("plugins/c9.ide.language.html/html_completer");
 
 module.exports = {
     
