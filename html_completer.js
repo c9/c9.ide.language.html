@@ -38,7 +38,7 @@ completer.complete = function(doc, fullAst, pos, currentNode, callback) {
         callback([{
               name            : match[1]+match[2]+match[3],
               replaceText     : replaceText,
-              doc             : "<pre>" + replaceText.replace("\^\^", "&#9251;") + "</pre>",
+              doc             : "<pre>" + replaceText.replace("\^\^", "&#9251;").replace(/</g, "&lt;") + "</pre>",
               icon            : null,
               meta            : "Jade-Haml",
               identifierRegex : JADE_ID_REGEX,
@@ -53,7 +53,7 @@ completer.complete = function(doc, fullAst, pos, currentNode, callback) {
             return {
               name        : m,
               replaceText : htmlSnippets[m],
-              doc         : "<pre>" + htmlSnippets[m].replace("\^\^", "&#9251;") + "</pre>",
+              doc         : "<pre>" + htmlSnippets[m].replace("\^\^", "&#9251;").replace(/</g, "&lt;") + "</pre>",
               icon        : null,
               meta        : "snippet",
               priority    : 2
