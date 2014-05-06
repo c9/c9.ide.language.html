@@ -22,7 +22,7 @@ var JADE_ID_REGEX = /[a-zA-Z_0-9\$\_.#]/;
 completer.complete = function(doc, fullAst, pos, currentNode, callback) {
     var line = doc.getLine(pos.row);
     var match = JADE_REGEX.exec(line.substring(0, pos.column));
-    if(match) {
+    if (match) {
         var replaceText;
         var snippet = htmlSnippets[match[1]];
         if (snippet) {
@@ -36,13 +36,13 @@ completer.complete = function(doc, fullAst, pos, currentNode, callback) {
                 "\">^^", "</", match[1] || "div", ">"].join("");
         }
         callback([{
-              name            : match[1]+match[2]+match[3],
-              replaceText     : replaceText,
-              doc             : "<pre>" + replaceText.replace("\^\^", "&#9251;").replace(/</g, "&lt;") + "</pre>",
-              icon            : null,
-              meta            : "Jade-Haml",
-              identifierRegex : JADE_ID_REGEX,
-              priority        : 100
+              name: match[1]+match[2]+match[3],
+              replaceText: replaceText,
+              doc: "<pre>" + replaceText.replace("\^\^", "&#9251;").replace(/</g, "&lt;") + "</pre>",
+              icon: null,
+              meta: "Jade-Haml",
+              identifierRegex: JADE_ID_REGEX,
+              priority: 100
         }]);
     }
     else {
@@ -51,12 +51,12 @@ completer.complete = function(doc, fullAst, pos, currentNode, callback) {
         var matches = completeUtil.findCompletions(identifier, allIdentifiers);
         callback(matches.map(function(m) {
             return {
-              name        : m,
-              replaceText : htmlSnippets[m],
-              doc         : "<pre>" + htmlSnippets[m].replace("\^\^", "&#9251;").replace(/</g, "&lt;") + "</pre>",
-              icon        : null,
-              meta        : "snippet",
-              priority    : 2
+              name: m,
+              replaceText: htmlSnippets[m],
+              doc: "<pre>" + htmlSnippets[m].replace("\^\^", "&#9251;").replace(/</g, "&lt;") + "</pre>",
+              icon: null,
+              meta: "snippet",
+              priority: 2
             };
         }));
     }
