@@ -1,3 +1,5 @@
+"use server";
+
 if (typeof process !== "undefined") {
     require("amd-loader");
     require("../../test/setup_paths");
