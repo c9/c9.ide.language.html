@@ -9,14 +9,12 @@
         "url": "http://github.com/c9/c9.ide.language.html.git"
     },
     "plugins": {
-        "plugin": {
-            "html": {}
-        }
+        "html": {}
     },
     "categories": [
         "core"
     ],
     "licenses": [
-        ""
+        "AGPL"
     ]
 }
