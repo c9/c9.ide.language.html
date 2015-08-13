@@ -18,6 +18,14 @@ completer.handlesLanguage = function(language) {
 var JADE_REGEX = /.*?([a-zA-Z]*)([.#])([\w]+)/;
 var JADE_ID_REGEX = /[a-zA-Z_0-9\$\_.#]/;
 
+completer.getCompletionRegex = function() {
+    return /[<=A-Za-z:_$\-]/;
+};
+
+completer.getIdentifierRegex = function() {
+    return JADE_ID_REGEX;
+};
+
 completer.complete = function(doc, fullAst, pos, currentNode, callback) {
     var line = doc.getLine(pos.row);
     var match = JADE_REGEX.exec(line.substring(0, pos.column));
