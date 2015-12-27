@@ -26,7 +26,7 @@ completer.getIdentifierRegex = function() {
     return JADE_ID_REGEX;
 };
 
-completer.complete = function(doc, fullAst, pos, currentNode, callback) {
+completer.complete = function(doc, fullAst, pos, options, callback) {
     var line = doc.getLine(pos.row);
     var match = JADE_REGEX.exec(line.substring(0, pos.column));
     if (match) {
