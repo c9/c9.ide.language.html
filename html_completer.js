@@ -43,7 +43,7 @@ completer.complete = function(doc, fullAst, pos, options, callback) {
                 "\">^^", "</", match[1] || "div", ">"].join("");
         }
         callback([{
-              name: match[1]+match[2]+match[3],
+              name: match[1] + match[2] + match[3],
               replaceText: replaceText,
               doc: "<pre>" + replaceText.replace("\^\^", "&#9251;").replace(/</g, "&lt;") + "</pre>",
               icon: null,
